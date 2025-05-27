@@ -1,0 +1,10 @@
+certifi
+requests
+pandas
+numpy
+plotly
+statsmodels
+fmpsdk
+google-genai
+python-dotenv
+ipython
