@@ -1,10 +1,7 @@
-certifi
-requests
-pandas
-numpy
-plotly
-statsmodels
-fmpsdk
-google-genai
-python-dotenv
-ipython
+Flask==2.3.2
+gunicorn==21.2.0
+requests==2.31.0
+pandas==2.1.4
+scipy==1.11.4
+python-dotenv==1.0.0
+newsapi-python==0.2.7
