@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Insights</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <a href="#" class="logo">Market Insights</a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Market Insights</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Analysis</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Research</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="search-box">
+                <input type="text" placeholder="Search">
+                <span class="search-icon">🔍</span>
+            </div>
+            <span class="notification-icon">🔔</span>
+            <img src="{{ url_for('static', filename='images/profile.png') }}" alt="Profile" class="profile-pic">
+        </div>
+    </header>
+
+    <main>
+        <section class="market-overview">
+            <h1>Market Overview</h1>
+
+            <div class="section-title">Market News</div>
+            <div class="news-container" id="market-news-container">
+                <!-- Market news will be loaded here by JavaScript -->
+            </div>
+
+            <div class="section-title">Stock-Specific News</div>
+            <div class="stock-input-section">
+                <input type="text" id="stock-ticker-input" placeholder="Enter stock ticker (e.g., XYZ)">
+                <button id="fetch-stock-news-btn">Fetch News</button>
+            </div>
+            <div class="news-container" id="stock-specific-news-container">
+                <!-- Stock-specific news will be loaded here by JavaScript -->
+            </div>
+        </section>
+
+        <section class="performance-charts">
+            <h1>Performance Charts</h1>
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h2>Relative Performance</h2>
+                    <div class="chart-value">+<span id="rp-value">5.2</span>%</div>
+                    <div class="chart-change">1Y <span class="positive">+<span id="rp-change">1.5</span>%</span></div>
+                    <canvas id="relativePerformanceChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h2>Moving Z-Score</h2>
+                    <div class="chart-value" id="zscore-value">1.8</div>
+                    <div class="chart-change">1Y <span class="negative">-<span id="zscore-change">0.2</span></span></div>
+                    <canvas id="movingZScoreChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h2>Alpha</h2>
+                    <div class="chart-value" id="alpha-value">0.03</div>
+                    <div class="chart-change">1Y <span class="positive">+<span id="alpha-change">0.01</span></span></div>
+                    <canvas id="alphaChart"></canvas>
+                </div>
+                <div class="chart-card large-card">
+                    <h2>Cumulative Alpha</h2>
+                    <div class="chart-value" id="cumulative-alpha-value">0.15</div>
+                    <div class="chart-change">1Y <span class="positive">+<span id="cumulative-alpha-change">0.05</span></span></div>
+                    <canvas id="cumulativeAlphaChart"></canvas>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
